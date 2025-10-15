@@ -11,6 +11,7 @@
 #include <xdiag/basis/electron/apply/apply_raise_lower.hpp>
 #include <xdiag/basis/electron/apply/apply_szsz.hpp>
 #include <xdiag/basis/electron/apply/apply_u.hpp>
+#include <xdiag/basis/electron/apply/apply_spsm.hpp>
 #include <xdiag/basis/apply_identity.hpp>
 
 #include <xdiag/common.hpp>
@@ -51,6 +52,8 @@ void apply_terms(OpSum const &ops, basis_t const &basis_in,
       electron::apply_nup_nup<coeff_t, symmetric>(cpl, op, basis_in, fill);
     } else if (type == "NdnNdn") {
       electron::apply_ndn_ndn<coeff_t, symmetric>(cpl, op, basis_in, fill);
+    } else if ( (type == "S+") || (type == "S-") ) {
+      electron::apply_spsm<coeff_t, symmetric>(cpl, op, basis_in, basis_out, fill);
     } else if (type == "Id") {
       apply_identity<coeff_t, basis_t, fill_f>(cpl, basis_in, fill);
     } else {
