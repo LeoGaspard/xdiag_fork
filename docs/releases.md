@@ -2,6 +2,25 @@
 title: Releases
 ---
 
+## v0.4.1
+
+**Dec. 4, 2025**
+Small patch release
+
+* Fixing bug reported in issue https://github.com/awietek/xdiag/issues/99
+
+## v0.4.0
+
+**Nov. 4, 2025**
+Major update introducing sparse matrix capabilities
+
+* Novel functionality for sparse matrices
+* Sparse matrices can be created in COO, CSC, and CSR formats
+* Internal iterative algorithms can be used with sparse matrices
+* several minor bugfixes
+* deprecated support for Julia versions 1.9 and lower
+
+
 ## v0.3.3
 
 **Jun. 17, 2025**

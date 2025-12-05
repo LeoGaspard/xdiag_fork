@@ -17,8 +17,33 @@ set(XDIAG_SOURCES
   algebra/algebra.cpp
   algebra/matrix.cpp
   algebra/apply.cpp
+  algebra/apply_dispatch.cpp
   algebra/isapprox.cpp
-
+  
+  algebra/sparse/apply.cpp
+  
+  algebra/sparse/coo_matrix.cpp
+  algebra/sparse/coo_matrix_generate.cpp
+  algebra/sparse/instantiations/coo_matrix_nnz_double.cpp
+  algebra/sparse/instantiations/coo_matrix_nnz_complex.cpp
+  algebra/sparse/instantiations/coo_matrix_fill_int32_double.cpp
+  algebra/sparse/instantiations/coo_matrix_fill_int32_complex.cpp
+  algebra/sparse/instantiations/coo_matrix_fill_int64_double.cpp
+  algebra/sparse/instantiations/coo_matrix_fill_int64_complex.cpp
+  
+  algebra/sparse/csr_matrix.cpp
+  algebra/sparse/csr_matrix_generate.cpp
+  algebra/sparse/instantiations/csr_matrix_nnz_int32_double.cpp
+  algebra/sparse/instantiations/csr_matrix_nnz_int32_complex.cpp
+  algebra/sparse/instantiations/csr_matrix_nnz_int64_double.cpp
+  algebra/sparse/instantiations/csr_matrix_nnz_int64_complex.cpp
+  algebra/sparse/instantiations/csr_matrix_fill_int32_double.cpp
+  algebra/sparse/instantiations/csr_matrix_fill_int32_complex.cpp
+  algebra/sparse/instantiations/csr_matrix_fill_int64_double.cpp
+  algebra/sparse/instantiations/csr_matrix_fill_int64_complex.cpp
+  
+  algebra/sparse/csc_matrix.cpp
+  
   io/read.cpp
   io/file_toml.cpp
   io/file_h5.cpp
@@ -51,22 +76,16 @@ set(XDIAG_SOURCES
   basis/spinhalf/basis_symmetric_sz.cpp
   basis/spinhalf/basis_symmetric_no_sz.cpp
   basis/spinhalf/basis_sublattice.cpp
-  basis/spinhalf/apply/dispatch_matrix.cpp
-  basis/spinhalf/apply/dispatch_apply.cpp
 
   basis/tj/basis_tj.cpp
   basis/tj/basis_np.cpp
   basis/tj/basis_symmetric_np.cpp
-  basis/tj/apply/dispatch_matrix.cpp
-  basis/tj/apply/dispatch_apply.cpp
-  
+
   basis/electron/basis_electron.cpp
   basis/electron/basis_np.cpp
   basis/electron/basis_no_np.cpp
   basis/electron/basis_symmetric_np.cpp
   basis/electron/basis_symmetric_no_np.cpp
-  basis/electron/apply/dispatch_matrix.cpp
-  basis/electron/apply/dispatch_apply.cpp
   
   blocks/blocks.cpp
   blocks/spinhalf.cpp
@@ -139,16 +158,13 @@ set(XDIAG_DISTRIBUTED_SOURCES
   basis/spinhalf_distributed/basis_spinhalf_distributed.cpp
   basis/spinhalf_distributed/basis_sz.cpp
   basis/spinhalf_distributed/transpose.cpp
-  basis/spinhalf_distributed/apply/dispatch_apply.cpp
   basis/spinhalf_distributed/apply/apply_terms.cpp
   
   basis/tj_distributed/basis_tj_distributed.cpp
   basis/tj_distributed/basis_np.cpp
-  basis/tj_distributed/apply/dispatch_apply.cpp
 
   basis/electron_distributed/basis_electron_distributed.cpp
   basis/electron_distributed/basis_np.cpp
-  basis/electron_distributed/apply/dispatch_apply.cpp
   
   blocks/spinhalf_distributed.cpp
   blocks/tj_distributed.cpp
@@ -161,6 +177,10 @@ set(XDIAG_JULIA_SOURCES
   algebra/matrix.cpp
   algebra/apply.cpp
   algebra/algebra.cpp
+  algebra/sparse/coo_matrix.cpp
+  algebra/sparse/csr_matrix.cpp
+  algebra/sparse/csc_matrix.cpp
+  algebra/sparse/apply.cpp
 
   algorithms/sparse_diag.cpp
   algorithms/lanczos/eigs_lanczos.cpp
